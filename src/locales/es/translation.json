@@ -1,0 +1,178 @@
+{
+  "languages": {
+    "en": "Inglés",
+    "pt": "Portugués",
+    "es": "Español",
+    "it": "Italiano",
+    "zh": "Chino",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "header": {
+    "navigation": {
+      "home": "Inicio",
+      "whatsappIntegration": "Integración con WhatsApp"
+    },
+    "auth": {
+      "signIn": "Iniciar sesión",
+      "profile": {
+        "editProfile": "Editar perfil",
+        "logout": "Cerrar sesión"
+      }
+    }
+  },
+  "chat": {
+    "messages": {
+      "startConversation": {
+        "title": "¡Inicia una nueva conversación!",
+        "description": "Selecciona las fuentes de datos deseadas en el panel izquierdo y haz tu pregunta abajo.",
+        "suggestionsButton": "Ver preguntas sugeridas",
+        "generatingSuggestions": "Generando sugerencias..."
+      },
+      "loadingAnswer": "Cargando respuesta...",
+      "collapseMessage": "Clic para colapsar",
+      "selectForExport": "Seleccionar para exportar",
+      "copyText": "Copiar texto",
+      "editResponse": "Editar respuesta",
+      "exportSelectedResponses": "Exportar respuestas seleccionadas a PDF",
+      "noSelectedResponses": "No hay respuestas seleccionadas para exportar."
+    },
+    "input": {
+      "placeholder": "Tu mensaje para Draiven...",
+      "aiSoftware": "Software de IA",
+      "generateSuggestedQuestions": "Generar preguntas sugeridas",
+      "sendMessage": "Enviar mensaje",
+      "model": "Modelo",
+      "webSearch": "Búsqueda web",
+      "tools": "Herramientas",
+      "toolOptions": {
+        "yahooFinance": "Yahoo Finance",
+        "portalTransparencia": "Portal Transparência GOV.BR",
+        "tradingEconomics": "Trading Economics"
+      }
+    },
+    "buttons": {
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    },
+    "alerts": {
+      "noDataset": "¡No hay dataset seleccionado!",
+      "close": "Cerrar"
+    }
+  },
+  "errorNotification": {
+    "dismiss": "Descartar notificación"
+  },
+  "conversationHistory": {
+    "title": "Historial de Conversaciones",
+    "empty": "No hay conversaciones aún",
+    "timeAgo": "hace {{time}}"
+  },
+  "inputFileModal": {
+    "title": "Nueva fuente de datos",
+    "steps": {
+      "chooseType": {
+        "title": "Elige el tipo de fuente de datos:",
+        "file": {
+          "title": "Archivo",
+          "description": "CSV, XLSX, Parquet, JSON"
+        },
+        "database": {
+          "title": "Base de datos SQL",
+          "description": "PostgreSQL, MySQL, Oracle, etc."
+        }
+      },
+      "fileUpload": {
+        "title": "Selecciona un archivo (CSV, XLSX, JSON, Parquet):",
+        "dropzone": {
+          "clickToSelect": "Haz clic para seleccionar",
+          "dragAndDrop": "o arrastra y suelta",
+          "fileTypes": "CSV, XLSX, JSON o Parquet"
+        }
+      },
+      "fileForm": {
+        "selectedFile": "Archivo Seleccionado:",
+        "datasetName": "Nombre del Dataset",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Describe brevemente el dataset",
+        "csv": {
+          "separator": "Separador (CSV)",
+          "encoding": "Codificación (CSV)"
+        },
+        "xlsx": {
+          "selectSheets": "Selecciona hojas para importar:",
+          "headerRow": "¿La primera fila es encabezado?"
+        }
+      },
+      "sqlForm": {
+        "databaseType": "Tipo de Base de Datos",
+        "host": "Host",
+        "port": "Puerto",
+        "database": "Base de Datos",
+        "username": "Usuario",
+        "password": "Contraseña",
+        "tableName": "Nombre de la Tabla (opcional)"
+      }
+    },
+    "buttons": {
+      "back": "Atrás",
+      "send": "Enviar Dataset",
+      "sending": "Enviando..."
+    },
+    "errors": {
+      "unsupportedFile": "Tipo de archivo no soportado (CSV, XLSX, JSON, Parquet)",
+      "uploadFailed": "Error al subir el dataset.",
+      "sheetUploadFailed": "Error al subir la hoja"
+    }
+  },
+  "suggestedQuestions": {
+    "title": "Preguntas Sugeridas",
+    "empty": "No hay preguntas sugeridas disponibles en este momento.",
+    "copied": "¡Copiado!",
+    "close": "Cerrar"
+  },
+  "whatsappModal": {
+    "title": "Integración con WhatsApp",
+    "steps": {
+      "sendNumber": {
+        "title": "1. Envía mensaje a:",
+        "copyNumber": "Copiar número"
+      },
+      "sendMessage": {
+        "title": "2. Envía el mensaje:",
+        "copyMessage": "Copiar mensaje"
+      }
+    },
+    "buttons": {
+      "openWhatsApp": "Abrir en WhatsApp",
+      "close": "Cerrar"
+    }
+  },
+  "sources": {
+    "title": "Fuentes de Datos",
+    "buttons": {
+      "add": "Agregar",
+      "remove": "Eliminar",
+      "addDataSource": "Agregar fuente de datos"
+    },
+    "status": {
+      "processing": "Procesando dataset...",
+      "error": "Error al crear dataset",
+      "unknown": "Estado desconocido"
+    },
+    "empty": {
+      "title": "No se encontraron fuentes de datos",
+      "description": "Agrega una nueva fuente de datos haciendo clic en el botón de arriba para comenzar a hacer preguntas."
+    },
+    "loading": {
+      "title": "Cargando fuentes de datos..."
+    },
+    "deleteModal": {
+      "title": "Confirmar eliminación",
+      "description": "¿Estás seguro de que deseas eliminar el dataset \"{{name}}\"? Esta acción no se puede deshacer.",
+      "buttons": {
+        "cancel": "Cancelar",
+        "delete": "Eliminar"
+      }
+    }
+  }
+} 

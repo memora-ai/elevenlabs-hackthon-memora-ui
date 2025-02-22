@@ -1,0 +1,178 @@
+{
+  "languages": {
+    "en": "英语",
+    "pt": "葡萄牙语",
+    "es": "西班牙语",
+    "it": "意大利语",
+    "zh": "中文",
+    "switchLanguage": "切换语言"
+  },
+  "header": {
+    "navigation": {
+      "home": "首页",
+      "whatsappIntegration": "WhatsApp集成"
+    },
+    "auth": {
+      "signIn": "登录",
+      "profile": {
+        "editProfile": "编辑个人资料",
+        "logout": "退出登录"
+      }
+    }
+  },
+  "chat": {
+    "messages": {
+      "startConversation": {
+        "title": "开始新对话！",
+        "description": "在左侧面板中选择所需的数据源，然后在下方提出问题。",
+        "suggestionsButton": "查看建议问题",
+        "generatingSuggestions": "正在生成建议..."
+      },
+      "loadingAnswer": "加载回答中...",
+      "collapseMessage": "点击折叠",
+      "selectForExport": "选择导出",
+      "copyText": "复制文本",
+      "editResponse": "编辑回答",
+      "exportSelectedResponses": "导出所选回答为PDF",
+      "noSelectedResponses": "没有选择要导出的回答。"
+    },
+    "input": {
+      "placeholder": "向Draiven发送消息...",
+      "aiSoftware": "AI软件",
+      "generateSuggestedQuestions": "生成建议问题",
+      "sendMessage": "发送消息",
+      "model": "模型",
+      "webSearch": "网页搜索",
+      "tools": "工具",
+      "toolOptions": {
+        "yahooFinance": "雅虎财经",
+        "portalTransparencia": "巴西政府透明门户",
+        "tradingEconomics": "交易经济"
+      }
+    },
+    "buttons": {
+      "save": "保存",
+      "cancel": "取消"
+    },
+    "alerts": {
+      "noDataset": "未选择数据集！",
+      "close": "关闭"
+    }
+  },
+  "errorNotification": {
+    "dismiss": "关闭通知"
+  },
+  "conversationHistory": {
+    "title": "对话历史",
+    "empty": "暂无对话",
+    "timeAgo": "{{time}}前"
+  },
+  "inputFileModal": {
+    "title": "新数据源",
+    "steps": {
+      "chooseType": {
+        "title": "选择数据源类型：",
+        "file": {
+          "title": "文件",
+          "description": "CSV, XLSX, Parquet, JSON"
+        },
+        "database": {
+          "title": "SQL数据库",
+          "description": "PostgreSQL, MySQL, Oracle等"
+        }
+      },
+      "fileUpload": {
+        "title": "选择文件（CSV, XLSX, JSON, Parquet）：",
+        "dropzone": {
+          "clickToSelect": "点击选择",
+          "dragAndDrop": "或拖放",
+          "fileTypes": "CSV, XLSX, JSON或Parquet"
+        }
+      },
+      "fileForm": {
+        "selectedFile": "已选择文件：",
+        "datasetName": "数据集名称",
+        "description": "描述",
+        "descriptionPlaceholder": "简要描述数据集",
+        "csv": {
+          "separator": "分隔符（CSV）",
+          "encoding": "编码（CSV）"
+        },
+        "xlsx": {
+          "selectSheets": "选择要导入的工作表：",
+          "headerRow": "第一行是标题？"
+        }
+      },
+      "sqlForm": {
+        "databaseType": "数据库类型",
+        "host": "主机",
+        "port": "端口",
+        "database": "数据库",
+        "username": "用户名",
+        "password": "密码",
+        "tableName": "表名（可选）"
+      }
+    },
+    "buttons": {
+      "back": "返回",
+      "send": "发送数据集",
+      "sending": "发送中..."
+    },
+    "errors": {
+      "unsupportedFile": "不支持的文件类型（CSV, XLSX, JSON, Parquet）",
+      "uploadFailed": "上传数据集失败。",
+      "sheetUploadFailed": "上传工作表失败"
+    }
+  },
+  "suggestedQuestions": {
+    "title": "建议问题",
+    "empty": "目前没有建议问题。",
+    "copied": "已复制！",
+    "close": "关闭"
+  },
+  "whatsappModal": {
+    "title": "WhatsApp集成",
+    "steps": {
+      "sendNumber": {
+        "title": "1. 发送消息至：",
+        "copyNumber": "复制号码"
+      },
+      "sendMessage": {
+        "title": "2. 发送消息：",
+        "copyMessage": "复制消息"
+      }
+    },
+    "buttons": {
+      "openWhatsApp": "在WhatsApp中打开",
+      "close": "关闭"
+    }
+  },
+  "sources": {
+    "title": "数据源",
+    "buttons": {
+      "add": "添加",
+      "remove": "删除",
+      "addDataSource": "添加数据源"
+    },
+    "status": {
+      "processing": "处理数据集中...",
+      "error": "创建数据集出错",
+      "unknown": "未知状态"
+    },
+    "empty": {
+      "title": "未找到数据源",
+      "description": "点击上方按钮添加新数据源，开始提问。"
+    },
+    "loading": {
+      "title": "加载数据源中..."
+    },
+    "deleteModal": {
+      "title": "确认删除",
+      "description": "确定要删除数据集 {{name}} 吗？此操作无法撤消。",
+      "buttons": {
+        "cancel": "取消",
+        "delete": "删除"
+      }
+    }
+  }
+} 

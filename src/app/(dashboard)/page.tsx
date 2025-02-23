@@ -49,9 +49,7 @@ const HomePage = (): JSX.Element => {
         setSharedMemoras(sharedResponse.data);
 
         // Fetch public memoras
-        const publicResponse = await apiClient.get('/memora/', {
-          params: { privacy_status: 'public' }
-        });
+        const publicResponse = await apiClient.get('/memora/');
         setPublicMemoras(publicResponse.data);
       } catch (error) {
         console.error('Error fetching memoras:', error);

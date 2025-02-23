@@ -60,6 +60,7 @@ const MemoraPage = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [isVideoProcessing, setIsVideoProcessing] = useState<string | null>(null);
   const [videoUrls, setVideoUrls] = useState<Record<string, string>>({});
+  const [isSharing, setIsSharing] = useState(false);
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
@@ -286,10 +287,29 @@ const MemoraPage = () => {
   };
 
   const handleShare = async () => {
-    // TODO: Implement the share endpoint call
-    setIsShareModalOpen(false);
-    setSelectedUsers([]);
-    setSearchTerm('');
+    setIsSharing(true);
+    try {
+      // Share with each selected user sequentially
+      for (const user of selectedUsers) {
+        await apiClient.post(`/memora/${id}/share/${user.id}`);
+      }
+
+      // Update shared users list after successful sharing
+      const sharedUsersResponse = await apiClient.get(`/memora/${id}/shared-with`);
+      setSharedUsers(sharedUsersResponse.data);
+
+      // Close modal and reset states
+      setIsShareModalOpen(false);
+      setSelectedUsers([]);
+      setSearchTerm('');
+
+      // You might want to show a success toast/notification here
+    } catch (error) {
+      console.error('Error sharing memora:', error);
+      // You might want to show an error toast/notification here
+    } finally {
+      setIsSharing(false);
+    }
   };
 
   if (isLoading) {
@@ -367,11 +387,12 @@ const MemoraPage = () => {
                         <>
                           <span>{msg.content}</span>
                           {videoUrls[msg.id] && (
-                            <div className="mt-2">
+                            <div className="mt-2 max-w-[540px]">
                               <video 
                                 src={videoUrls[msg.id]} 
                                 controls 
                                 className="rounded-lg w-full"
+                                preload="metadata"
                               >
                                 Your browser does not support the video tag.
                               </video>
@@ -496,15 +517,23 @@ const MemoraPage = () => {
                     </button>
                   </div>
                   {sharedUsers.length > 0 ? (
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="space-y-2">
                       {sharedUsers.map((user) => (
-                        <div key={user.id} className="relative w-6 h-6" title={user.name}>
-                          <Image
-                            src={user.picture || `https://i.pravatar.cc/150?u=${encodeURIComponent(user.email)}`}
-                            alt={user.name}
-                            fill
-                            className="rounded-full object-cover"
-                          />
+                        <div 
+                          key={user.id} 
+                          className="flex items-center gap-2 p-1"
+                        >
+                          <div className="relative w-6 h-6">
+                            <Image
+                              src={user.picture || `https://i.pravatar.cc/150?u=${encodeURIComponent(user.email)}`}
+                              alt={user.name}
+                              fill
+                              className="rounded-full object-cover"
+                            />
+                          </div>
+                          <span className="text-xs text-neutral-dark truncate">
+                            {user.name}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -683,10 +712,17 @@ const MemoraPage = () => {
               </button>
               <button
                 onClick={handleShare}
-                disabled={selectedUsers.length === 0}
+                disabled={selectedUsers.length === 0 || isSharing}
                 className="px-4 py-2 rounded-lg bg-primary text-neutral-light disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors"
               >
-                Share
+                {isSharing ? (
+                  <span className="flex items-center gap-2">
+                    <span className="animate-spin">●</span>
+                    Sharing...
+                  </span>
+                ) : (
+                  'Share'
+                )}
               </button>
             </div>
           </div>

@@ -26,7 +26,7 @@ interface UserSearchResult {
   email: string;
   picture?: string;
   is_active: boolean;
-}
+} 
 
 const MemoraPage = () => {
   const { id } = useParams();

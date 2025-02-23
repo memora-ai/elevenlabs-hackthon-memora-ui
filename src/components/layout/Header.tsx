@@ -62,7 +62,7 @@ const Header = (): JSX.Element => {
 
   const handleLogout = async () => {
     setProfileMenuOpen(false);
-    router.push('/api/auth/logout');
+    router.push(`/api/auth/logout?returnTo=${encodeURIComponent(window.location.origin)}&federated=true`);
   };
 
   return (
@@ -85,7 +85,7 @@ const Header = (): JSX.Element => {
                 className="object-contain"
               />
               <span className="ml-2 text-xl font-semibold text-primary">
-                Memora
+                Memoras
               </span>
             </div>
             <span className="hidden md:block text-sm font-medium text-neutral-dark/60 italic border-l border-secondary-light pl-4">
@@ -125,7 +125,7 @@ const Header = (): JSX.Element => {
                 href="/api/auth/login"
                 className="px-4 py-2 rounded-full text-sm font-medium transition-colors bg-primary text-neutral-light hover:bg-primary/90"
               >
-                {t('header.auth.signIn')}
+                {t('header.auth.signIn', 'Sign In')}
               </Link>
             ) : (
               <div className="relative" ref={profileMenuRef}>
@@ -149,7 +149,7 @@ const Header = (): JSX.Element => {
                       onClick={() => setProfileMenuOpen(false)}
                     >
                       <HiOutlineUser className="mr-2 h-4 w-4" />
-                      {t('header.auth.profile.editProfile')}
+                      {t('header.auth.profile.editProfile', 'Edit profile')}
                     </Link>
 
                     <button
@@ -157,7 +157,7 @@ const Header = (): JSX.Element => {
                       className="w-full flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 border-t border-secondary-light"
                     >
                       <HiOutlineLogout className="mr-2 h-4 w-4" />
-                      {t('header.auth.profile.logout')}
+                      {t('header.auth.profile.logout', 'Logout')}
                     </button>
                   </div>
                 )}

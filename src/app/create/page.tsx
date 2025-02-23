@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import apiClient from '@/lib/apiClient';
@@ -13,7 +13,7 @@ import { useSideMenu } from '@/contexts/SideMenuContext';
 
 type Step = 'intro' | 'basic' | 'video' | 'social';
 
-const CreatePage = (): JSX.Element => {
+function CreatePageContent() {
   const { t } = useTranslation();
   const { isCollapsed } = useSideMenu();
 
@@ -40,7 +40,7 @@ const CreatePage = (): JSX.Element => {
       setIsLoading(true);
       const response = await apiClient.get(`/memora/${id}`);
       const memora: Memora = response.data;
-      
+            
       // Convert memora data to BasicInformationData format
       setBasicData({
         fullName: memora.full_name,
@@ -165,6 +165,12 @@ const CreatePage = (): JSX.Element => {
       )}
     </main>
   );
-};
+}
 
-export default CreatePage;
+export default function CreatePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CreatePageContent />
+    </Suspense>
+  );
+}

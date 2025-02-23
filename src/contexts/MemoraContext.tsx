@@ -20,7 +20,7 @@ export function MemoraProvider({ children }: { children: React.ReactNode }) {
     try {
       const [ownResponse, recentResponse] = await Promise.all([
         apiClient.get('/memora/my-memoras'),
-        apiClient.get('/memora', { params: { has_chat: true } })
+        apiClient.get('/memora/', { params: { has_chat: true } })
       ]);
       setUserMemoras(ownResponse.data);
       setRecentMemoras(recentResponse.data);

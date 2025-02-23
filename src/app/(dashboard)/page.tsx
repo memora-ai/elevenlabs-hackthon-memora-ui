@@ -26,7 +26,15 @@ const HomePage = (): JSX.Element => {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated && isClient) {
-      router.push('/api/auth/login');
+      console.log('Looking if needs to go to login page....')
+      console.log('isAuthenticated', isAuthenticated);
+      console.log('isLoading', isLoading);
+      console.log('isClient', isClient);
+
+      // Only redirect if we're not already in the auth flow
+      if (!window.location.pathname.includes('/api/auth')) {
+        router.push('/api/auth/login');
+      }
     }
   }, [isAuthenticated, isLoading, router, isClient]);
 
@@ -52,6 +60,7 @@ const HomePage = (): JSX.Element => {
       }
     }
 
+    console.log('Lookin to fetch memoras...', isClient, isAuthenticated);
     if (isClient && isAuthenticated) {
       fetchMemoras();
     }

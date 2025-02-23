@@ -40,7 +40,7 @@ function CreatePageContent() {
       setIsLoading(true);
       const response = await apiClient.get(`/memora/${id}`);
       const memora: Memora = response.data;
-            
+      
       // Convert memora data to BasicInformationData format
       setBasicData({
         fullName: memora.full_name,

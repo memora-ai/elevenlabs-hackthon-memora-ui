@@ -8,8 +8,6 @@ export async function GET(req: NextRequest) {
     const res = await getAccessToken();
     const { accessToken } = res;
 
-    console.log(accessToken);
-
     if (!accessToken) {
       return NextResponse.json(
         { error: 'No access token found' },
